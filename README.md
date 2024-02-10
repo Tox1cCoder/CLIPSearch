@@ -13,26 +13,7 @@ Image as query.
 
 ![](https://i.imgur.com/xYJ6SnQ.png)
 
-## Introduction
-
-CLIP (Contrastive Language-Image Pre-Training) is a neural network trained on a variety of (image, text) pairs. It can map images and text into the same latent space, so that they can be compared using a similarity measure.
-
-![CLIP](https://raw.githubusercontent.com/openai/CLIP/main/CLIP.png)
-
-Extending the work in this [repository](https://github.com/haltakov/natural-language-image-search), I created a simple image search engine that can take both text and images as query. The search engine works as follows:
-
-1. Use the image encoder to compute the feature vector of the images in the dataset.
-2. Index the images in the following format:
-   ```
-   image_id: {"url": https://abc.com/xyz, "feature_vector": [0.1, 0.3, ..., 0.2]}
-   ```
-3. Compute the feature vector of the query. (Use text encoder if query is text. Use image encoder if query is image.)
-4. Compute the cosine similarities between the feature vector of the query and the feature vector of the images in the dataset.
-5. Return $k$ images that have the highest similarity.
-
-I used the lite version of the [Unsplash dataset](https://github.com/unsplash/datasets) that contains 25,000 images. The [k-Nearest Neighbor search](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/knn.html) is powered by Amazon Elasticsearch Service. I deployed the query service as an AWS Lambda function and put an API gateway in front of it. The frontend is developed using Streamlit.
-
-## How to Use
+## Installation
 
 ### Install dependencies
 
