@@ -12,7 +12,7 @@ The database contains 25,000 images from the Unsplash Dataset. You can either
 - search them using a natural language description (e.g., animals in jungle), or
 - find similar images by providing an image URL (e.g. https://i.imgur.com/KRNOn22.jpeg).
 
-The algorithm will return the ten most relevant images.
+The app will return the ten most relevant images.
 """
 
 
