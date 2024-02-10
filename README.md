@@ -1,7 +1,5 @@
 # Image Search using CLIP
 
-Retrieve images based on a query (text or image), using Open AI's pretrained CLIP model.
-
 ## Installation
 
 ### Install dependencies
