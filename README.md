@@ -1,10 +1,7 @@
 # Image Search using CLIP
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/kingyiusuen/clip-image-search/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/kingyiusuen/clip-image-search/blob/master/.pre-commit-config.yaml)
-![CI/CD pipeline](https://github.com/kingyiusuen/clip-image-search/actions/workflows/pipeline.yaml/badge.svg)
-[![License](https://img.shields.io/github/license/kingyiusuen/clip-image-search)](https://github.com/kingyiusuen/clip-image-search/blob/master/LICENSE)
 
 Retrieve images based on a query (text or image), using Open AI's pretrained CLIP model.
 
@@ -34,10 +31,6 @@ Extending the work in this [repository](https://github.com/haltakov/natural-lang
 5. Return $k$ images that have the highest similarity.
 
 I used the lite version of the [Unsplash dataset](https://github.com/unsplash/datasets) that contains 25,000 images. The [k-Nearest Neighbor search](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/knn.html) is powered by Amazon Elasticsearch Service. I deployed the query service as an AWS Lambda function and put an API gateway in front of it. The frontend is developed using Streamlit.
-
-## Possible Improvements
-
-- The feature vector outputted by CLIP is a 32-bit floating point vector with 512 dimensions. To reduce storage cost and increase query speed, we may consider using a dimension reduction technique such as PCA to reduce the number of features. If we want to scale the system to billions of images, we may even consider binarizing the features, [as is done in Pinterest](https://arxiv.org/pdf/1702.04680.pdf).
 
 ## How to Use
 
@@ -91,8 +84,3 @@ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d
 ```
 streamlit run streamlit_app.py
 ```
-
-## Acknowledgement
-
-- [open-ai/CLIP](https://github.com/openai/CLIP)
-- [haltakov/natural-language-image-search](https://github.com/haltakov/natural-language-image-search)
