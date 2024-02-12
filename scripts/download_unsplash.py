@@ -45,10 +45,10 @@ def main():
     df = pd.read_csv(DATASET_PATH / "photos.tsv000", sep="\t", usecols=["photo_id", "photo_image_url"])
     photos = df.values.tolist()
 
-    print("Photo downloading begins...")
+    print("Photo(s) downloading begins...")
     pool = ThreadPool(args.threads_count)
     pool.map(partial(download_photo, args.image_width), photos)
-    print("Photo downloading finished!")
+    print("Photo(s) downloading finished!")
 
 
 if __name__ == "__main__":
