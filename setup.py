@@ -21,19 +21,7 @@ dev_packages = [
 
 setup(
     name="clip-image-search",
-    version="0.1",
-    license="MIT",
     description="Use OpenAI's CLIP model to search images with text or image as query.",
-    author="King Yiu Suen",
-    author_email="kingyiusuen@gmail.com",
-    url="https://github.com/kingyiusuen/clip-image-search/",
-    keywords=[
-        "machine-learning",
-        "deep-learning",
-        "artificial-intelligence",
-        "latex",
-        "neural-network",
-    ],
     classifiers=[
         "Development Status :: 1 - Planning",
         "Intended Audience :: Science/Research",
